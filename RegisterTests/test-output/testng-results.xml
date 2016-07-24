@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10307" started-at="2016-07-24T12:36:38Z" finished-at="2016-07-24T12:36:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10307" started-at="2016-07-24T12:36:38Z" finished-at="2016-07-24T12:36:48Z">
+      <class name="com.svejo.register.ConfirmPasswordTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.svejo.register.ConfirmPasswordTests@c038203]" name="setUp" is-config="true" duration-ms="2424" started-at="2016-07-24T15:36:38Z" finished-at="2016-07-24T15:36:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.svejo.register.ConfirmPasswordTests@c038203]" name="setUp" is-config="true" duration-ms="2100" started-at="2016-07-24T15:36:40Z" finished-at="2016-07-24T15:36:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="passwordConfirmFailTest()[pri:0, instance:com.svejo.register.ConfirmPasswordTests@c038203]" name="passwordConfirmFailTest" duration-ms="5090" started-at="2016-07-24T15:36:42Z" finished-at="2016-07-24T15:36:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passwordConfirmFailTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.svejo.register.ConfirmPasswordTests@c038203]" name="tearDown" is-config="true" duration-ms="692" started-at="2016-07-24T15:36:47Z" finished-at="2016-07-24T15:36:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.svejo.register.ConfirmPasswordTests@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2016-07-24T15:36:48Z" finished-at="2016-07-24T15:36:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.svejo.register.ConfirmPasswordTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

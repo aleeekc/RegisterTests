@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-httpclient-2.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-httpclient-3.0.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-httpclient-3.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-logging-1.2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/fluent-hc-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-cache-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-win-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpcore-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpmime-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/org.apache.commons.codec-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/org.apache.commons.httpclient.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/org.json-20120521.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/fluent-hc-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-cache-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpclient-win-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Blue/Desktop/pcloud_auto/httpmime-4.5.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

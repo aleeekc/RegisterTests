@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegisterSuite">
+  <test name="Test">
+    <classes>
+      <class name="com.svejo.register.RegisterTest"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="EmailTest">
+    <classes>
+      <class name="com.svejo.register.EmailFailCase"/>
+    </classes>
+  </test> <!-- Test -->
+    </test> <!-- Test -->
+    <test name="UsernameTests">
+    <classes>
+      <class name="com.svejo.register.UsernameTests"/>
+    </classes>
+  </test> <!-- Test -->
+    </test> <!-- Test -->
+    <test name="PasswordTests">
+    <classes>
+      <class name="com.svejo.register.PasswordTests"/>
+    </classes>
+  </test> <!-- Test -->
+    </test> <!-- Test -->
+    <test name="ConfirmPasswordTests">
+    <classes>
+      <class name="com.svejo.register.ConfirmPasswordTests"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- RegisterSuite -->

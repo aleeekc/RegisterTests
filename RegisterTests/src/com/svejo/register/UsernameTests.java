@@ -26,10 +26,9 @@ public class UsernameTests {
 	@BeforeMethod
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
-		//System.setProperty("webdriver.chrome.driver",
-		//		"chromedriver.exe");
-		//driver = new ChromeDriver();
+		// driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver = new ChromeDriver();
 		baseUrl = "https://svejo.net/register";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		uuid = UUID.randomUUID().toString();
@@ -42,22 +41,15 @@ public class UsernameTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username")).sendKeys("0");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit
-				.assertTrue(driver
-						.findElement(By.cssSelector("BODY"))
-						.getText()
-						.contains(
-								"е прекалено късо (не може да бъде по-малко от 2 символа)"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.contains("е прекалено късо (не може да бъде по-малко от 2 символа)"));
 
 	}
 
@@ -66,24 +58,16 @@ public class UsernameTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username"))
-				.sendKeys(
-						"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+				.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit
-				.assertTrue(driver
-						.findElement(By.cssSelector("BODY"))
-						.getText()
-						.contains(
-								"е прекаленo дълго (не може да е повече от 30 символа)"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.contains("е прекаленo дълго (не може да е повече от 30 символа)"));
 
 	}
 
@@ -92,18 +76,15 @@ public class UsernameTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username")).sendKeys("ÅÍÎÏ˝ÓÔÒÚÆ☃");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("съдържа невярна стойност"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit
+				.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains("съдържа невярна стойност"));
 
 	}
 
@@ -112,19 +93,15 @@ public class UsernameTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
-		driver.findElement(By.id("user_username")).sendKeys(
-				".asd?#$%^&*()+_!\\|*-");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_username")).sendKeys(".asd?#$%^&*()+_!\\|*-");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("съдържа невярна стойност"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit
+				.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains("съдържа невярна стойност"));
 
 	}
 
@@ -133,22 +110,17 @@ public class UsernameTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
-		driver.findElement(By.id("user_username")).sendKeys(
-				"qwe123qwe123");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_username")).sendKeys("qwe123qwe123");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("вече съществува"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains("вече съществува"));
 
 	}
-	
+
 	@AfterMethod
 	@AfterClass(alwaysRun = true)
 	public void tearDown() throws Exception {

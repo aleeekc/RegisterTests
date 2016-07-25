@@ -26,10 +26,9 @@ public class PasswordTests {
 	@BeforeMethod
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
-		//System.setProperty("webdriver.chrome.driver",
-		//		"chromedriver.exe");
-		//driver = new ChromeDriver();
+		// driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver = new ChromeDriver();
 		baseUrl = "https://svejo.net/register";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		uuid = UUID.randomUUID().toString();
@@ -42,22 +41,15 @@ public class PasswordTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username")).sendKeys("asdasd123a");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("asdasda");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"asdasda");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit
-				.assertTrue(driver
-						.findElement(By.cssSelector("BODY"))
-						.getText()
-						.contains(
-								"е прекалено късо (не може да бъде по-малко от 6 символа)"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("asdasda");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY")).getText()
+				.contains("е прекалено късо (не може да бъде по-малко от 6 символа)"));
 
 		// NOTE: THE ACTUAL PASSWORD LENGTH LIMIT IS 6, NOT 8
 
@@ -68,21 +60,17 @@ public class PasswordTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username")).sendKeys("asdasdasd");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password"))
-				.sendKeys(
-						"asaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaa123");
+				.sendKeys("asaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaa123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
 		driver.findElement(By.id("user_password_confirmation"))
-				.sendKeys(
-						"asaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaa123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("съдържа невярна стойност"));
+				.sendKeys("asaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaaasaaa123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit
+				.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains("съдържа невярна стойност"));
 
 		// NOTE: THIS ASSET/TEST ALWAYS BREAKS, BECAUSE THERE ISN'T A LIMIT FOR
 		// PASSWORD LENGTH

@@ -26,10 +26,9 @@ public class ConfirmPasswordTests {
 	@BeforeMethod
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
-		//System.setProperty("webdriver.chrome.driver",
-		//		"chromedriver.exe");
-		//driver = new ChromeDriver();
+		// driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver = new ChromeDriver();
 		baseUrl = "https://svejo.net/register";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		uuid = UUID.randomUUID().toString();
@@ -42,17 +41,15 @@ public class ConfirmPasswordTests {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd" + uuid + ".bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd" + uuid + ".bg");
 		driver.findElement(By.id("user_username")).sendKeys("asdasda");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("asdasda");
 		driver.findElement(By.id("user_password_confirmation")).clear();
 		driver.findElement(By.id("user_password_confirmation")).sendKeys("pa");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("не съответства на потвърждението"));
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(
+				driver.findElement(By.cssSelector("BODY")).getText().contains("не съответства на потвърждението"));
 
 	}
 

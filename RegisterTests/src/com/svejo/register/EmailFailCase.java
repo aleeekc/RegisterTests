@@ -29,10 +29,9 @@ public class EmailFailCase {
 	@BeforeMethod
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
-	    driver = new FirefoxDriver();
-		//System.setProperty("webdriver.chrome.driver",
-		//		"chromedriver.exe");
-		//driver = new ChromeDriver();
+		// driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver = new ChromeDriver();
 		baseUrl = "https://svejo.net/register";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		uuid = UUID.randomUUID().toString();
@@ -45,18 +44,14 @@ public class EmailFailCase {
 		driver.get("https://svejo.net/register");
 		AssertJUnit.assertEquals(driver.getTitle(), "svejo.net | users - new");
 		driver.findElement(By.id("user_email")).clear();
-		driver.findElement(By.id("user_email")).sendKeys(
-				"asdasd@asd1212asdasd.bg");
+		driver.findElement(By.id("user_email")).sendKeys("asdasd@asd1212asdasd.bg");
 		driver.findElement(By.id("user_username")).sendKeys("asdasdsad");
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
-		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]"))
-				.click();
-		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY"))
-				.getText().contains("вече съществува"));
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
+		driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("BODY")).getText().contains("вече съществува"));
 
 	}
 
@@ -70,8 +65,7 @@ public class EmailFailCase {
 		driver.findElement(By.id("user_password")).clear();
 		driver.findElement(By.id("user_password")).sendKeys("parolata123");
 		driver.findElement(By.id("user_password_confirmation")).clear();
-		driver.findElement(By.id("user_password_confirmation")).sendKeys(
-				"parolata123");
+		driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
 
 		// ///////////////////////////////////////////
 
@@ -87,35 +81,23 @@ public class EmailFailCase {
 				} else {
 
 					driver.findElement(By.id("user_email")).sendKeys(line);
-					driver.findElement(
-							By.cssSelector("#new_user > input[name=\"commit\"]"))
-							.click();
+					driver.findElement(By.cssSelector("#new_user > input[name=\"commit\"]")).click();
 
-					AssertJUnit
-							.assertTrue(driver
-									.findElement(By.cssSelector("BODY"))
-									.getText()
-									.contains("съдържа невярна стойност")
-									|| driver
-											.findElement(By.cssSelector("BODY"))
-											.getText()
-											.contains(
-													"е прекалено късо (не може да бъде по-малко от 6 символа)")
-									|| driver
-											.findElement(By.cssSelector("BODY"))
-											.getText()
-											.contains(
-													"не може да е без стойност"));
+					AssertJUnit.assertTrue(
+							driver.findElement(By.cssSelector("BODY")).getText().contains("съдържа невярна стойност")
+									|| driver.findElement(By.cssSelector("BODY")).getText()
+											.contains("е прекалено късо (не може да бъде по-малко от 6 символа)")
+									|| driver.findElement(By.cssSelector("BODY")).getText()
+											.contains("не може да е без стойност")
+									|| driver.findElement(By.cssSelector("BODY")).getText()
+											.contains("е прекаленo дълго (не може да е повече от 80 символа)"));
 
 					driver.findElement(By.id("user_email")).clear();
 
 					driver.findElement(By.id("user_password")).clear();
-					driver.findElement(By.id("user_password")).sendKeys(
-							"parolata123");
-					driver.findElement(By.id("user_password_confirmation"))
-							.clear();
-					driver.findElement(By.id("user_password_confirmation"))
-							.sendKeys("parolata123");
+					driver.findElement(By.id("user_password")).sendKeys("parolata123");
+					driver.findElement(By.id("user_password_confirmation")).clear();
+					driver.findElement(By.id("user_password_confirmation")).sendKeys("parolata123");
 				}
 			}
 		} finally {
